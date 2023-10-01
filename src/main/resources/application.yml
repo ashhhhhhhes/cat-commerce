@@ -11,7 +11,7 @@ spring:
 
   # (3) h2 console 설정 : h2 콘솔 활성화
   h2:
-    console:화
+    console:
       enabled: true
 
   # (4) jpa 를 위한 설정
