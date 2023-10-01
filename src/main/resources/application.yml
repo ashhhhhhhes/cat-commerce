@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: cate-commerce # 프로젝트명
+  config:
+    activate:
+      on-profile: dev   # (1) 실행할 개발 환경 profile (dev)
+  datasource:
+    url: jdbc:h2:mem:catcommerce # (2) database 경로 주소 (h2)
+    username: admin
+    password: cat486!
+    driver-class-name: org.hibernate.dialect.H2Dialect # (3) 데이터 베이스 드라이버 클래스명
+
+
+  # (4) jpa 를 위한 설정
+  jpa:
+    ## SQL을 콘솔에서 보기 좋게 정리
+    show_sql: true
+    hibernate:
+      ## ddl-auto: validate 설정시 테이블 검증.
+      ddl-auto: validate
+    ## ddl 설정
+    generate-ddl: true # true 로 설정 하여 자동 테이블 생성 및 수정
+
+    properties:
+      hibernate:
+        auto_quote_keyword: true
+        "[format_sql]": true
+        globally_quoted_identifiers: true
+
+
+# (5) 로깅 설정
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
+
